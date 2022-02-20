@@ -190,7 +190,8 @@ func (p *LaunchTemplateProvider) createLaunchTemplate(ctx context.Context, optio
 				DeviceName: aws.String("/dev/xvda"),
 				Ebs: &ec2.LaunchTemplateEbsBlockDeviceRequest{
 					Encrypted:  aws.Bool(true),
-					VolumeSize: aws.Int64(20),
+					VolumeSize: aws.Int64(100),
+					VolumeType: aws.String("gp3"),
 				},
 			}},
 			IamInstanceProfile: &ec2.LaunchTemplateIamInstanceProfileSpecificationRequest{
